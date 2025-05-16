@@ -18,7 +18,6 @@ This project is a web-based discussion platform built with the MEAN stack (Mongo
 - [Node.js](https://nodejs.org/) (v14 or newer)
 - [Angular CLI](https://angular.io/cli) (v12 or newer)
 - [MongoDB](https://www.mongodb.com/) (v4.4 or newer)
-- npm (comes bundled with Node.js)
 
 ## Installation
 
