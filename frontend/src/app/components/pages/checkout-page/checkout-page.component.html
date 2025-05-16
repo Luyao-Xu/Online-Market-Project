@@ -1,0 +1,53 @@
+<div class="checkout-container">
+    <div class="checkout-grid">
+      <div class="checkout-section">
+        <div class="section-header">
+          <h2 class="section-title">Customer Information</h2>
+          <p class="section-subtitle">Enter your details to complete the order</p>
+        </div>
+        
+        <form [formGroup]="checkoutForm" class="checkout-form">
+          <div class="form-group">
+            <text-input 
+              [control]="fc['name']" 
+              label="Full Name"
+              placeholder="Enter your full name">
+            </text-input>
+          </div>
+          
+          <div class="form-group">
+            <text-input 
+              [control]="fc['address']" 
+              label="Delivery Address"
+              placeholder="Enter your complete address">
+            </text-input>
+          </div>
+        </form>
+      </div>
+  
+      <div class="checkout-section">
+        <div class="section-header">
+          <h2 class="section-title">Your Order</h2>
+          <p class="section-subtitle">Review your items before payment</p>
+        </div>
+        <order-items [order]="order"></order-items>
+      </div>
+  
+      <div class="checkout-section map-section">
+        <div class="section-header">
+          <h2 class="section-title">Delivery Location</h2>
+          <p class="section-subtitle">Confirm your address on the map</p>
+        </div>
+        <map [order]="order" class="checkout-map"></map>
+      </div>
+  
+      <div class="checkout-section payment-section">
+        <button class="payment-button" (click)="createOrder()">
+          Complete Order
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>

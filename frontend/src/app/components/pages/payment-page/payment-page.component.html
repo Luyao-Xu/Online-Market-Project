@@ -1,0 +1,58 @@
+<div class="order-summary-container">
+  <div class="order-grid">
+    <div class="order-section order-details">
+      <div class="section-header">
+        <h2 class="section-title">Order Summary</h2>
+        <p class="section-subtitle">Review your order details</p>
+      </div>
+
+      <div class="customer-info">
+        <div class="info-card">
+          <div class="info-item">
+            <svg class="info-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M19 21V5C19 3.89543 18.1046 3 17 3H7C5.89543 3 5 3.89543 5 5V21M19 21L21 21M19 21H14M5 21L3 21M5 21H10M9 7H15M9 11H15M10 21V15C10 14.4477 10.4477 14 11 14H13C13.5523 14 14 14.4477 14 15V21M10 21H14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <h3 class="info-label">Customer Name</h3>
+              <p class="info-value">{{order.name}}</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <svg class="info-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12ZM12 12C15.866 12 19 15.134 19 19V21H5V19C5 15.134 8.13401 12 12 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <h3 class="info-label">Shipping Address</h3>
+              <p class="info-value">{{order.address}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-items-container">
+        <h3 class="items-title">Your Items</h3>
+        <order-items [order]="order"></order-items>
+      </div>
+    </div>
+
+    <div class="order-section map-container">
+      <div class="section-header">
+        <h2 class="section-title">Shipping Location</h2>
+        <p class="section-subtitle">Your delivery address on map</p>
+      </div>
+      <map [order]="order" [readonly]="true" class="order-map"></map>
+    </div>
+
+    <div class="order-section payment-section">
+      <div class="section-header">
+        <h2 class="section-title">Complete Payment</h2>
+        <p class="section-subtitle">Secure checkout with PayPal</p>
+      </div>
+
+      <div class="payment-button-container">
+        <paypal-button [order]="order"></paypal-button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<header class="main-header">
+    <div class="header-container">
+      <a routerLink="/" class="brand-logo">
+        <span class="logo-text">Online Market</span>
+      </a>
+      
+      <nav class="header-nav">
+        <ul class="nav-list">
+          <li class="nav-item" *ngIf="!isAuth">
+            <a routerLink="/login" class="nav-link auth-link">Sign In</a>
+          </li>
+          
+          <li class="nav-item user-menu" *ngIf="isAuth">
+            <div class="user-dropdown-trigger">
+              <span class="user-avatar">{{user.name | slice:0:1 | uppercase}}</span>
+              <span class="user-name">{{user.name}}</span>
+              <svg class="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            
+            <div class="user-dropdown">
+              <a routerLink="/profile" class="dropdown-item">
+                <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M6 20C6 17.7909 7.79086 16 10 16H14C16.2091 16 18 17.7909 18 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Profile
+              </a>
+              <a routerLink="/orders" class="dropdown-item">
+                <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 10H21M7 3V5M17 3V5M6 20H18C19.1046 20 20 19.1046 20 18V8C20 6.89543 19.1046 6 18 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Orders
+              </a>
+              <a (click)="logout()" class="dropdown-item">
+                <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path d="M15 16L19 12M19 12L15 8M19 12H9M12 16C12 17.6569 10.6569 19 9 19H5C3.34315 19 2 17.6569 2 16V8C2 6.34315 3.34315 5 5 5H9C10.6569 5 12 6.34315 12 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Logout
+              </a>
+            </div>
+          </li>
+          
+          <li class="nav-item cart-link">
+            <a routerLink="/cart-page" class="nav-link">
+              <svg class="cart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.70711 15.2929C4.07714 15.9229 4.52331 17 5.41421 17H17M17 17C15.8954 17 15 17.8954 15 19C15 20.1046 15.8954 21 17 21C18.1046 21 19 20.1046 19 19C19 17.8954 18.1046 17 17 17ZM9 19C9 20.1046 8.10457 21 7 21C5.89543 21 5 20.1046 5 19C5 17.8954 5.89543 17 7 17C8.10457 17 9 17.8954 9 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span class="cart-label">Cart</span>
+              <span *ngIf="cartQuantity" class="cart-badge">{{cartQuantity}}</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>

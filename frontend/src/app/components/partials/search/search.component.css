@@ -1,0 +1,125 @@
+.search-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  
+  .search-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    
+    &:focus-within {
+      box-shadow: 0 4px 25px rgba(99, 102, 241, 0.2);
+    }
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 1.5rem;
+    color: #94a3b8;
+    z-index: 2;
+  }
+  
+  .search-input {
+    flex: 1;
+    height: 56px;
+    padding: 0 1.5rem 0 3.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #0f172a;
+    border: 1px solid #e2e8f0;
+    border-radius: 50px 0 0 50px;
+    background: white;
+    outline: none;
+    transition: all 0.3s ease;
+    
+    &:focus {
+      border-color: #6366f1;
+    }
+    
+    &::placeholder {
+      color: #94a3b8;
+      font-weight: 400;
+    }
+  }
+  
+  .search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 56px;
+    padding: 0 1.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background: #6366f1;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: #4f46e5;
+      
+      svg {
+        transform: translateX(2px);
+      }
+    }
+    
+    svg {
+      transition: transform 0.2s ease;
+      stroke: white;
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .search-container {
+      padding: 1.5rem 1rem;
+    }
+    
+    .search-box {
+      max-width: 100%;
+    }
+    
+    .search-input {
+      height: 50px;
+      padding-left: 3rem;
+    }
+    
+    .search-button {
+      height: 50px;
+      padding: 0 1.5rem;
+    }
+    
+    .search-icon {
+      left: 1.25rem;
+      width: 18px;
+      height: 18px;
+    }
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .search-container {
+    animation: fadeIn 0.4s ease-out forwards;
+  }

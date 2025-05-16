@@ -1,0 +1,36 @@
+<div class="order-items-container">
+  <div class="order-items-header">
+    <h3 class="section-title">Order Items</h3>
+    <div class="total-items">{{order.items.length}} item(s)</div>
+  </div>
+
+  <div class="order-items-table">
+    <div class="table-header">
+      <div class="header-cell product">Product</div>
+      <div class="header-cell price">Unit Price</div>
+      <div class="header-cell quantity">Quantity</div>
+      <div class="header-cell total">Total</div>
+    </div>
+
+    <div class="table-body">
+      <div class="table-row" *ngFor="let item of order.items">
+        <div class="table-cell product-cell">
+          <a routerLink="/product/{{item.product.id}}" class="product-link">
+            <img [src]="item.product.imageUrl" class="product-image"/>
+            <span class="product-name">{{item.product.name}}</span>
+          </a>
+        </div>
+        <div class="table-cell price-cell">{{item.product.price | currency}}</div>
+        <div class="table-cell quantity-cell">{{item.quantity}}</div>
+        <div class="table-cell total-cell">{{item.price | currency}}</div>
+      </div>
+    </div>
+
+    <div class="table-footer">
+      <div class="footer-cell"></div>
+      <div class="footer-cell"></div>
+      <div class="footer-cell total-label">Order Total:</div>
+      <div class="footer-cell total-value">{{order.totalPrice | currency}}</div>
+    </div>
+  </div>
+</div>

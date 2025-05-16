@@ -1,0 +1,37 @@
+<div class="products-container">
+    <div class="products-header">
+      <app-search></app-search>
+      <app-tags></app-tags>
+    </div>
+  
+    <app-not-found
+      [visible]="!products || !products.length"
+      notFoundMessage="No products found"
+      resetLinkText="Reset Search">
+    </app-not-found>
+  
+    <div class="products-grid">
+      <div *ngFor="let product of products" class="product-card">
+        <ng-container *ngIf="!product.sold">
+          <a routerLink="/product/{{product.id}}" class="product-link">
+            <div class="product-image-container">
+              <img [src]="product.imageUrl" [alt]="product.name" class="product-image"/>
+              <div class="product-badge">New</div>
+            </div>
+            
+            <div class="product-details">
+              <h3 class="product-name">{{product.name}}</h3>
+              
+              <div class="product-meta">
+                <div class="product-price">{{product.price | currency}}</div>
+                <div class="product-rating">
+                  <span class="stars">★★★★☆</span>
+                  <span class="count">(24)</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </ng-container>
+      </div>
+    </div>
+  </div>

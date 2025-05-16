@@ -1,0 +1,219 @@
+.product-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    
+    @media (min-width: 992px) {
+      flex-direction: row;
+    }
+  }
+  
+  .product-gallery {
+    flex: 1;
+    
+    .main-image {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #f8fafc;
+      aspect-ratio: 1/1;
+      
+      .product-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+        
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+    }
+  }
+  
+  .product-info {
+    flex: 1;
+    padding: 0 1rem;
+    
+    @media (min-width: 992px) {
+      padding: 0 2rem;
+    }
+  }
+  
+  .product-header {
+    margin-bottom: 1.5rem;
+    
+    .product-title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #0f172a;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  .product-meta {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    
+    .price-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      
+      .price-label {
+        font-size: 0.875rem;
+        color: #64748b;
+        font-weight: 500;
+      }
+      
+      .product-price {
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: #10b981;
+      }
+    }
+    
+    .availability {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #10b981;
+      font-weight: 500;
+      font-size: 0.9375rem;
+      
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #10b981;
+      }
+    }
+  }
+  
+  .product-tags {
+    margin-bottom: 2rem;
+    
+    .tags-label {
+      display: block;
+      font-size: 0.875rem;
+      color: #64748b;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .product-tag {
+      padding: 0.5rem 1rem;
+      background: #f1f5f9;
+      border-radius: 9999px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: #6366f1;
+      text-decoration: none;
+      transition: all 0.2s;
+      
+      &:hover {
+        background: #e0e7ff;
+        color: #4f46e5;
+      }
+    }
+  }
+  
+  .product-actions {
+    margin-bottom: 2rem;
+    
+    .add-to-cart {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      width: 100%;
+      padding: 1rem;
+      background: #6366f1;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+      
+      &:hover {
+        background: #4f46e5;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+      }
+      
+      &:active {
+        transform: translateY(0);
+      }
+      
+      svg {
+        stroke: white;
+      }
+    }
+  }
+  
+  .product-description {
+    padding-top: 1.5rem;
+    border-top: 1px solid #f1f5f9;
+    
+    .description-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 1rem;
+    }
+    
+    .description-text {
+      color: #64748b;
+      line-height: 1.6;
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 767px) {
+    .product-header .product-title {
+      font-size: 1.75rem;
+    }
+    
+    .product-meta .product-price {
+      font-size: 1.5rem;
+    }
+    
+    .product-gallery .main-image {
+      aspect-ratio: 1/1;
+    }
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .product-details {
+    animation: fadeIn 0.4s ease-out forwards;
+  }

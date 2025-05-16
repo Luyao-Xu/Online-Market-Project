@@ -1,0 +1,100 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <div class="auth-header">
+      <h1 class="auth-title">Create Account</h1>
+      <p class="auth-subtitle">Get started with your account</p>
+    </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="submit()" class="auth-form">
+      <div class="input-field">
+        <label for="name">Full Name</label>
+        <input 
+          id="name"
+          type="text"
+          formControlName="name"
+          placeholder="Enter your full name"
+          [class.error]="fc['name'].invalid && isSubmitted">
+        <div *ngIf="fc['name'].invalid && isSubmitted" class="error-message">
+          Name is required
+        </div>
+      </div>
+
+      <div class="input-field">
+        <label for="email">Email Address</label>
+        <input 
+          id="email"
+          type="email"
+          formControlName="email"
+          placeholder="Enter your email"
+          [class.error]="fc['email'].invalid && isSubmitted">
+        <div *ngIf="fc['email'].invalid && isSubmitted" class="error-message">
+          Valid email required
+        </div>
+      </div>
+
+      <div class="input-field">
+        <label for="password">Password</label>
+        <input 
+          id="password"
+          type="password"
+          formControlName="password"
+          placeholder="Create a password"
+          [class.error]="fc['password'].invalid && isSubmitted">
+        <div *ngIf="fc['password'].invalid && isSubmitted" class="error-message">
+          Password must be at least 6 characters
+        </div>
+      </div>
+
+      <div class="input-field">
+        <label for="confirmPassword">Confirm Password</label>
+        <input 
+          id="confirmPassword"
+          type="password"
+          formControlName="confirmPassword"
+          placeholder="Confirm your password"
+          [class.error]="fc['confirmPassword'].invalid && isSubmitted">
+        <div *ngIf="fc['confirmPassword'].invalid && isSubmitted" class="error-message">
+          Passwords must match
+        </div>
+      </div>
+
+      <div class="input-field">
+        <label for="address">Address</label>
+        <input 
+          id="address"
+          type="text"
+          formControlName="address"
+          placeholder="Enter your address"
+          [class.error]="fc['address'].invalid && isSubmitted">
+        <div *ngIf="fc['address'].invalid && isSubmitted" class="error-message">
+          Address is required
+        </div>
+      </div>
+
+      <div class="user-type">
+        <p class="user-type-label">Account Type</p>
+        <div class="user-type-options">
+          <label class="option-item">
+            <input type="radio" formControlName="userType" value="buyer" checked>
+            <span class="custom-radio"></span>
+            <span>Buyer</span>
+          </label>
+          <label class="option-item">
+            <input type="radio" formControlName="userType" value="seller">
+            <span class="custom-radio"></span>
+            <span>Seller</span>
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="auth-button">
+        Create Account
+        <span class="button-arrow">→</span>
+      </button>
+
+      <div class="auth-footer">
+        <p>Already have an account? <a routerLink="/login" [queryParams]="{returnUrl:returnUrl}" class="auth-link">Sign in</a></p>
+      </div>
+    </form>
+  </div>
+</div>
