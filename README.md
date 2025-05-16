@@ -22,14 +22,14 @@ This project is a web-based discussion platform built with the MEAN stack (Mongo
 ## Installation
 
 ### 1. Backend Setup
-cd backend
-npm install
-npm start
+  1. cd backend
+  2. npm install
+  3 .npm start
 
 ### 2. Frontend Setup
-cd frontend
-npm install
-npm start
+  1. cd frontend
+  2. npm install
+  3. npm start
 
 ## Running the Application
 After both the backend and frontend servers are running, access the application in your browser at: http://localhost:4200
