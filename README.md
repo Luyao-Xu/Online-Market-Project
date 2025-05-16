@@ -1,6 +1,6 @@
 # Online Market Project with MEAN Stack
 
-This project is a web-based discussion platform built with the MEAN stack (MongoDB, ExpressJS, Angular, and Node.js). It supports three user roles: **Buyers**, **Guest**, and **Seller**.
+This project is a web-based discussion platform built with the MEAN stack (MongoDB, ExpressJS, Angular, and Node.js). It supports three user roles: **Buyers**, **Guests**, and **Sellers**.
 
 ## Features
 
