@@ -24,7 +24,7 @@ This project is a web-based discussion platform built with the MEAN stack (Mongo
 ### 1. Backend Setup
   1. cd backend
   2. npm install
-  3 .npm start
+  3. npm start
 
 ### 2. Frontend Setup
   1. cd frontend
